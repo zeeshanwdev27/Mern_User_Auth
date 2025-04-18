@@ -98,9 +98,9 @@ export default function SignUp(props) {
       setEmailErrorMessage('');
     }
 
-    if (!password.value || password.value.length < 6) {
+    if (!password.value || password.value.length < 8) {
       setPasswordError(true);
-      setPasswordErrorMessage('Password must be at least 6 characters long.');
+      setPasswordErrorMessage('Password must be at least 8 characters long.');
       isValid = false;
     } else {
       setPasswordError(false);
@@ -263,6 +263,8 @@ export default function SignUp(props) {
             <Typography sx={{ color: 'text.secondary' }}>or</Typography>
           </Divider>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+
+            {/* Google */}
             <Button
               fullWidth
               variant="outlined"
@@ -271,6 +273,8 @@ export default function SignUp(props) {
             >
               Sign up with Google
             </Button>
+
+            {/* Facebook */}
             <Button
               fullWidth
               variant="outlined"
@@ -279,6 +283,7 @@ export default function SignUp(props) {
             >
               Sign up with Facebook
             </Button>
+
             <Typography sx={{ textAlign: 'center' }}>
               Already have an account?{' '}
               <Link
